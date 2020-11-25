@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <a href="#" class="btn">Click Me!</a>
+    </div>
+
+    <script>
+        let container = document.querySelector('#container');
+        let button = document.querySelector('.btn');
+
+        let color = ['red', 'blue', 'green', 'yellow', 'orange', 'purple'];
+
+        function changeBackground() {
+            let index = parseInt(Math.random() * color.length);
+            container.style.backgroundColor = color[index];
+            button.innerHTML = color[index].toUpperCase();
+        }
+
+        button.addEventListener('click', changeBackground);
+        
+    </script>
+</body>
+</html>

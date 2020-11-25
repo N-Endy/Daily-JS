@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hex Background</title>
+</head>
+<body>
+    <div id="container">
+        <h1 class="text"></h1>
+        <a href="#" class="btn">CLICK ME</a>
+    </div>
+
+    <script>
+        let container = document.querySelector('#container');
+        let text = document.querySelector('.text');
+        let btn = document.querySelector('.btn');
+
+        function changeBackground() {
+            let arrayOfHex = [1, 2, 3, 4, 5, 6, 'a', 'b', 'c', 'd', 'e', 'f'];
+            let hexNumber = '#';
+
+            for (let i=0; i<7; i++) {
+                hexNumber += arrayOfHex[Math.floor(arrayOfHex.length * Math.random())];
+                container.style.backgroundColor = hexNumber;
+                console.log(hexNumber);
+            }
+
+            text.textContent = `HEX NUMBER: ${hexNumber}`;
+        }
+
+        btn.addEventListener('click', changeBackground);
+
+
+        // let container = document.querySelector('#container');
+        // let text = document.querySelector('.text');
+        // let btn = document.querySelector('.btn');
+
+        // function changeBackground() {
+        //     let arrayOfHex = [1, 2, 3, 4, 5, 6, 'a', 'b', 'c', 'd', 'e', 'f'];
+        //     let hexNumber = ['#'];
+
+        //     for (let i=0; i<7; i++) {
+        //         hexNumber.push(arrayOfHex[Math.floor(arrayOfHex.length * Math.random())]);
+        //         var hex = hexNumber.join('');
+        //     }
+
+            
+        //     console.log(hex);
+        //     container.style.backgroundColor = hex;
+        //     console.log(container.style.backgroundColor);
+        //     text.textContent = `HEX NUMBER: ${hex}`;
+        // }
+
+        // btn.addEventListener('click', changeBackground);
+    </script>
+</body>
+</html>
